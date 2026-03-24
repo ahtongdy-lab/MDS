@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Display Majlis Daerah Simunjan - Full Premium with Ticker</title>
+<title>Display Majlis Daerah Simunjan - Logo Center</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -24,17 +24,15 @@ body{overflow:hidden;color:white;}
     transition:background 1s ease-in-out;
 }
 
-/* Logo animasi halus */
+/* Logo Majlis di tengah halaman */
 .logo{
-    position:absolute;
-    top:20px;
-    left:20px;
-    width:100px;
+    width:150px;
+    margin-bottom:20px;
     animation:logoBounce 3s infinite alternate;
 }
 @keyframes logoBounce{
     0%{transform:translateY(0);}
-    50%{transform:translateY(-5px);}
+    50%{transform:translateY(-10px);}
     100%{transform:translateY(0);}
 }
 
@@ -108,6 +106,7 @@ body{overflow:hidden;color:white;}
     .slider p{font-size:18px;}
     .clock{font-size:20px;}
     .countdown{font-size:24px;}
+    .logo{width:120px;}
 }
 @media screen and (max-width:768px){
     .fullscreen h1{font-size:30px;}
@@ -116,23 +115,29 @@ body{overflow:hidden;color:white;}
     .slider p{font-size:16px;}
     .clock{font-size:18px;}
     .countdown{font-size:20px;}
+    .logo{width:100px;}
 }
 </style>
 </head>
 <body>
 
 <div class="fullscreen" id="fullscreen">
+    <!-- Logo Majlis di tengah -->
     <img class="logo" src="logomds.png" alt="Logo Majlis">
 
+    <!-- Jam digital -->
     <div class="clock" id="clock"></div>
 
     <h1>MAJLIS DAERAH SIMUNJAN</h1>
     <h2>Berita & Info Aktiviti Staf</h2>
 
+    <!-- Slider Berita & Aktiviti -->
     <div class="slider" id="slider"></div>
 
+    <!-- Countdown -->
     <div class="countdown" id="countdown"></div>
 
+    <!-- Ticker info pantas -->
     <div class="ticker"><span id="tickerText"></span></div>
 </div>
 
@@ -156,8 +161,7 @@ const displayData = [
     {tajuk:"Operasi Pembersihan Bandar",isi:"Kerja pembersihan illegal dumping dilakukan oleh pasukan Majlis."},
     {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},
     {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis mengadakan kempen kebersihan di kawasan utama."},
-    {tajuk:"Latihan Staf Baharu",isi:"Latihan induksi untuk staf baharu berjaya dilaksanakan."},
-    {tajuk:"Kedatangan Staf MDS",isi:"ENCIK NUEL SILA HADIR DENGAN SEGERA, JANGAN KANJI GILAK."}
+    {tajuk:"Latihan Staf Baharu",isi:"Latihan induksi untuk staf baharu berjaya dilaksanakan."}
 ];
 let current = 0;
 const slider = document.getElementById("slider");
@@ -218,7 +222,9 @@ const tickerData = [
     "Info Staf: Latihan induksi selesai • ",
     "Info Staf: Mesyuarat mingguan berjaya • ",
     "Info Staf: Kempen kebersihan berjalan lancar • ",
-    "Info Staf: Operasi pembersihan illegal dumping selesai • "
+    "Info Staf: Operasi pembersihan illegal dumping selesai • ",
+    "Info Staf: ROMA SANGAT COMEL • ",
+    "Info Staf: Library Ditutup Selama-lamanya kerana isu 12 hari • "
 ];
 document.getElementById('tickerText').innerText = tickerData.join('');
 </script>
