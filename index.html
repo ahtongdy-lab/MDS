@@ -165,7 +165,7 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
 
 <script>
 // Background slideshow
-const backgrounds = ['gambar1.jpeg','gambar2.jpeg','gambar3.jpeg'];
+const backgrounds = ['gambar2.jpeg'];
 let bgIndex=0;
 const fullscreen=document.getElementById('fullscreen');
 setInterval(()=>{bgIndex=(bgIndex+1)%backgrounds.length;fullscreen.style.backgroundImage=`url('${backgrounds[bgIndex]}')`;},8000);
@@ -213,14 +213,10 @@ setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex
 
 // Media Aktiviti
 const mediaList = [
-  `<video width="400" controls>
-     <source src="videos/gotong-royong.mp4" type="video/mp4">
-   </video>`,
-  `<img src="images/karnival-sukan.jpg" alt="Karnival Sukan Staf" width="400">`,
-  `<video width="400" controls>
-     <source src='EarthHourVideo.mp4" type="video/mp4">
-   </video>`,
-  `<img src="images/kesedaran-alam-sekitar.jpg" alt="Kempen Alam Sekitar" width="400">`
+  `<h3>Earth Day Video</h3>
+   <video width="400" controls>
+     <source src="EarthHourVideo.mp4" type="video/mp4">
+   </video>`
 ];
 </script>
 </body>
