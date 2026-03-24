@@ -128,9 +128,6 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
 </style>
 </head>
 <body>
-<video autoplay muted loop>
-  <source src="EarthHourVideo.mp4" type="video/mp4">
-</video>
 
 <div class="fullscreen" id="fullscreen">
 
@@ -214,13 +211,43 @@ function showInfoSlide(i){infoListElem.innerHTML=`<li>${infoList[i]}</li>`;}
 showInfoSlide(infoIndex);
 setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex);},5000);
 
-// Media Aktiviti
+/// Media Aktiviti (VIDEO + GAMBAR)
+const mediaData = [
+  { type: "video", src: "EarthHourVideo.mp4", caption: "Gotong-Royong Kampung 24 Mac 2026" },
+  { type: "image", src: "gambar1.jpg", caption: "Karnival Sukan Staf 25 Mac 2026" },
+  { type: "video", src: "video2.mp4", caption: "Lawatan Komuniti ke Sekolah 26 Mac 2026" },
+  { type: "image", src: "gambar2.jpeg", caption: "Kempen Kesedaran Alam Sekitar 27 Mac 2026" }
+];
+
+let mediaIndex = 0;
 const mediaListElem = document.getElementById('mediaList');
-mediaList.forEach(item => {
-  const li = document.createElement('li');
-  li.innerHTML = item;
-  mediaListElem.appendChild(li);
-});
+
+function showMedia(i){
+  const item = mediaData[i];
+
+  if(item.type === "video"){
+    mediaListElem.innerHTML = `
+      <video width="100%" height="120" autoplay muted loop style="border-radius:8px;">
+        <source src="${item.src}" type="video/mp4">
+      </video>
+      <li>${item.caption}</li>
+    `;
+  } else {
+    mediaListElem.innerHTML = `
+      <img src="${item.src}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;">
+      <li>${item.caption}</li>
+    `;
+  }
+}
+
+// Start
+showMedia(mediaIndex);
+
+// Auto slide every 6 seconds
+setInterval(()=>{
+  mediaIndex = (mediaIndex + 1) % mediaData.length;
+  showMedia(mediaIndex);
+},6000);
 </script>
 </body>
 </html>
