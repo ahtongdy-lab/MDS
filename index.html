@@ -212,7 +212,7 @@ showInfoSlide(infoIndex);
 setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex);},5000);
 
 // Media Aktiviti
-const mediaList=["EarthHourVideo","Gambar Karnival Sukan Staf 25 Mac 2026","Video Lawatan Komuniti ke Sekolah 26 Mac 2026","Gambar Kempen Kesedaran Alam Sekitar 27 Mac 2026"];
+const mediaList=["EarthHourVideo.mp4","Gambar Karnival Sukan Staf 25 Mac 2026","Video Lawatan Komuniti ke Sekolah 26 Mac 2026","Gambar Kempen Kesedaran Alam Sekitar 27 Mac 2026"];
 const mediaListElem=document.getElementById('mediaList');
 let mediaIndex=0;
 function showMediaSlide(i){mediaListElem.innerHTML=`<li>🎬 ${mediaList[i]}</li>`;}
