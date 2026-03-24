@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Display Majlis Daerah Simunjan - Paparan Penuh</title>
+<title>Display Majlis Daerah Simunjan - TV Fullscreen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -26,76 +26,76 @@ body{overflow:hidden;color:white;}
 
 /* Logo Majlis di tengah halaman */
 .logo{
-    width:150px;
-    margin-bottom:20px;
+    width:200px;
+    margin-bottom:30px;
     animation:logoBounce 3s infinite alternate;
 }
 @keyframes logoBounce{
     0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+    50%{transform:translateY(-15px);}
     100%{transform:translateY(0);}
 }
 
 /* Jam Digital */
 .clock{
-    font-size:24px;
-    font-weight:600;
-    text-shadow:2px 2px 4px #000;
-    margin-bottom:15px;
+    font-size:36px;
+    font-weight:700;
+    text-shadow:3px 3px 6px #000;
+    margin-bottom:20px;
 }
 
 /* Header Text */
-.fullscreen h1{font-size:50px;margin-bottom:8px;text-shadow:2px 2px 6px #000;}
-.fullscreen h2{font-size:34px;margin-bottom:20px;opacity:0.9;text-shadow:1px 1px 4px #000;}
+.fullscreen h1{font-size:70px;margin-bottom:12px;text-shadow:3px 3px 8px #000;}
+.fullscreen h2{font-size:48px;margin-bottom:30px;opacity:0.9;text-shadow:2px 2px 6px #000;}
 
 /* Slider Box */
 .slider{
-    width:80%;
-    max-width:1000px;
+    width:85%;
+    max-width:1200px;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
-    border-radius:20px;
-    padding:30px;
+    border-radius:25px;
+    padding:40px;
     text-align:center;
     animation: fadeUp 1.5s ease;
 }
-.slider h3{font-size:28px;margin-bottom:8px;}
-.slider p{font-size:20px;}
+.slider h3{font-size:36px;margin-bottom:12px;}
+.slider p{font-size:26px;}
 
 /* Pengumuman Tahniah */
 .announcement{
     width:80%;
-    max-width:800px;
+    max-width:1000px;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(8px);
-    border-radius:15px;
-    padding:20px 30px;
-    margin-top:20px;
+    border-radius:20px;
+    padding:25px 35px;
+    margin-top:30px;
     text-align:left;
     animation: fadeUp 1.5s ease;
 }
 .announcement h3{
-    font-size:26px;
-    margin-bottom:12px;
+    font-size:32px;
+    margin-bottom:16px;
     text-align:center;
 }
 .announcement ul{
     list-style-type:disc;
-    padding-left:20px;
+    padding-left:30px;
 }
 .announcement ul li{
-    font-size:20px;
-    margin-bottom:5px;
+    font-size:26px;
+    margin-bottom:8px;
 }
 
 /* Countdown */
 .countdown{
-    margin-top:20px;
-    font-size:28px;
+    margin-top:30px;
+    font-size:36px;
     font-weight:700;
     background: rgba(0,0,0,0.6);
-    padding:10px 20px;
-    border-radius:15px;
+    padding:15px 25px;
+    border-radius:20px;
 }
 
 /* Ticker info pantas BAWAH */
@@ -104,20 +104,20 @@ body{overflow:hidden;color:white;}
     bottom:0;
     width:100%;
     background:rgba(0,0,0,0.75);
-    padding:10px 0;
+    padding:15px 0;
     overflow:hidden;
     white-space:nowrap;
     font-weight:700;
-    font-size:28px; /* font lebih besar */
+    font-size:32px;
 }
 .ticker span{
     display:inline-block;
     padding-left:100%;
-    animation:tickerMove 40s linear infinite; /* perlahan & smooth */
+    animation:tickerMove 80s linear infinite;
 }
 @keyframes tickerMove{
     0%{transform:translateX(0);}
-    100%{transform:translateX(-100%);}
+    100%{transform:translateX(-50%);}
 }
 
 /* Ticker SELAMAT DATANG ATAS */
@@ -126,13 +126,13 @@ body{overflow:hidden;color:white;}
     bottom:auto;
     background:rgba(0,0,0,0.7);
     color:yellow;
-    font-size:36px; /* font lebih besar */
+    font-size:48px;
     font-weight:700;
 }
 .ticker.top span{
     display:inline-block;
     padding-left:100%;
-    animation:tickerTopMove 30s linear infinite;
+    animation:tickerTopMove 50s linear infinite;
 }
 @keyframes tickerTopMove{
     0%{transform:translateX(100%);}
@@ -143,31 +143,44 @@ body{overflow:hidden;color:white;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
 /* Responsive */
+@media screen and (max-width:1440px){
+    .fullscreen h1{font-size:60px;}
+    .fullscreen h2{font-size:40px;}
+    .slider h3{font-size:30px;}
+    .slider p{font-size:22px;}
+    .announcement h3{font-size:28px;}
+    .announcement ul li{font-size:22px;}
+    .clock{font-size:30px;}
+    .countdown{font-size:30px;}
+    .ticker.top{font-size:38px;}
+    .ticker{font-size:28px;}
+    .logo{width:180px;}
+}
 @media screen and (max-width:1024px){
-    .fullscreen h1{font-size:38px;}
-    .fullscreen h2{font-size:26px;}
-    .slider h3{font-size:24px;}
-    .slider p{font-size:18px;}
-    .announcement h3{font-size:22px;}
-    .announcement ul li{font-size:18px;}
-    .clock{font-size:20px;}
-    .countdown{font-size:24px;}
-    .ticker.top{font-size:28px;}
-    .ticker{font-size:22px;}
-    .logo{width:120px;}
+    .fullscreen h1{font-size:50px;}
+    .fullscreen h2{font-size:34px;}
+    .slider h3{font-size:26px;}
+    .slider p{font-size:20px;}
+    .announcement h3{font-size:24px;}
+    .announcement ul li{font-size:20px;}
+    .clock{font-size:26px;}
+    .countdown{font-size:26px;}
+    .ticker.top{font-size:32px;}
+    .ticker{font-size:24px;}
+    .logo{width:150px;}
 }
 @media screen and (max-width:768px){
-    .fullscreen h1{font-size:30px;}
-    .fullscreen h2{font-size:22px;}
-    .slider h3{font-size:20px;}
-    .slider p{font-size:16px;}
-    .announcement h3{font-size:18px;}
-    .announcement ul li{font-size:16px;}
-    .clock{font-size:18px;}
-    .countdown{font-size:20px;}
-    .ticker.top{font-size:22px;}
-    .ticker{font-size:18px;}
-    .logo{width:100px;}
+    .fullscreen h1{font-size:40px;}
+    .fullscreen h2{font-size:28px;}
+    .slider h3{font-size:22px;}
+    .slider p{font-size:18px;}
+    .announcement h3{font-size:20px;}
+    .announcement ul li{font-size:18px;}
+    .clock{font-size:22px;}
+    .countdown{font-size:22px;}
+    .ticker.top{font-size:26px;}
+    .ticker{font-size:20px;}
+    .logo{width:120px;}
 }
 </style>
 </head>
@@ -178,7 +191,7 @@ body{overflow:hidden;color:white;}
     <!-- Ticker SELAMAT DATANG ATAS -->
     <div class="ticker top"><span id="tickerTopText">Selamat Datang ke Pejabat Majlis Daerah Simunjan</span></div>
 
-    <!-- Jam digital di bawah ticker atas -->
+    <!-- Jam digital -->
     <div class="clock" id="clock"></div>
 
     <!-- Logo Majlis di tengah -->
@@ -205,7 +218,7 @@ body{overflow:hidden;color:white;}
 
 <script>
 // Background slideshow
-const backgrounds = ['gambar2.jpeg'];
+const backgrounds = ['gambar1.jpeg','gambar2.jpeg','gambar3.jpeg'];
 let bgIndex = 0;
 const fullscreen = document.getElementById('fullscreen');
 setInterval(()=>{
@@ -247,35 +260,35 @@ function updateClock(){
 updateClock();
 setInterval(updateClock,1000);
 
-// Countdown untuk beberapa acara
+// Countdown automatik ke acara seterusnya
 const events = [
     {name:"Mesyuarat Staf Bulanan", date:new Date("2026-03-25T09:00:00")},
     {name:"Kempen Bandar Bersih", date:new Date("2026-03-25T09:00:00")},
     {name:"Program Komuniti 2026", date:new Date("2026-03-25T08:30:00")},
     {name:"TAHUN BARU 2027", date:new Date("2026-12-31T24:00:00")}
 ];
-let eventIndex = 0;
 const countdownElem = document.getElementById("countdown");
-function updateCountdown(){
-    if(events.length===0) return;
+function getNextEvent(){
     const now = new Date();
-    const event = events[eventIndex];
-    let diff = event.date - now;
-    if(diff <=0){
-        countdownElem.innerText = `📢 ${event.name} Sedang Berlangsung!`;
-    } else {
-        const days = Math.floor(diff/(1000*60*60*24));
-        const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-        const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
-        const seconds = Math.floor((diff%(1000*60))/1000);
-        countdownElem.innerText = `📅 ${event.name} dalam: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    const upcoming = events.filter(e => e.date - now > 0);
+    if(upcoming.length === 0) return null;
+    upcoming.sort((a,b)=>a.date - b.date);
+    return upcoming[0];
+}
+function updateCountdown(){
+    const event = getNextEvent();
+    if(!event) {
+        countdownElem.innerText = "Tiada acara seterusnya.";
+        return;
     }
+    const diff = event.date - new Date();
+    const days = Math.floor(diff/(1000*60*60*24));
+    const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((diff%(1000*60))/1000);
+    countdownElem.innerText = `📅 ${event.name} dalam: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 updateCountdown();
-setInterval(()=>{
-    eventIndex = (eventIndex+1) % events.length;
-    updateCountdown();
-},10000);
 setInterval(updateCountdown,1000);
 
 // Ticker info pantas BAWAH
@@ -288,7 +301,7 @@ const tickerData = [
     "Info Staf: Library Ditutup Selama-lamanya kerana isu 12 hari • ",
     "Info Staf: Sila pastikan Claim & TNT dihantar setiap sebelum 15 haribulan • "
 ];
-document.getElementById('tickerText').innerText = tickerData.join('');
+document.getElementById('tickerText').innerText = tickerData.join(' ') + tickerData.join(' ');
 
 // Senarai penerima Anugerah Perkhidmatan Cemerlang 2025
 const awardRecipients = [
@@ -298,7 +311,6 @@ const awardRecipients = [
     "Puan Maria Binti Tan",
     "Encik Faizal Bin Hassan"
 ];
-
 const awardListElem = document.getElementById('awardList');
 awardRecipients.forEach(name=>{
     const li = document.createElement('li');
