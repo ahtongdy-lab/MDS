@@ -144,9 +144,8 @@ body{overflow:hidden;color:white;}
 <script>
 // Background slideshow
 const backgrounds = [
-    'gambar1.jpeg',
-    'gambar2.jpeg', 
-    'gambar3.jpeg'
+    'gambar2.jpeg'
+  
 ];
 let bgIndex = 0;
 const fullscreen = document.getElementById('fullscreen');
@@ -158,10 +157,10 @@ setInterval(()=>{
 // Slider berita & aktiviti
 const displayData = [
     {tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis."},
-    {tajuk:"Operasi Pembersihan Bandar",isi:"Kerja pembersihan illegal dumping dilakukan oleh pasukan Majlis."},
+    {tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis."},
     {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},
-    {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis mengadakan kempen kebersihan di kawasan utama."},
-    {tajuk:"Latihan Staf Baharu",isi:"Latihan induksi untuk staf baharu berjaya dilaksanakan."}
+    {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."},
+    {tajuk:"Latihan Staf Baharu",isi:"Sila pastikan Borang Latihan dihantar secepat mungkin sebelum 1 Januari 2222."}
 ];
 let current = 0;
 const slider = document.getElementById("slider");
@@ -188,9 +187,9 @@ setInterval(updateClock,1000);
 
 // Countdown untuk beberapa acara
 const events = [
-    {name:"Mesyuarat Staf Bulanan", date:new Date("2026-04-01T09:00:00")},
-    {name:"Kempen Bandar Bersih", date:new Date("2026-04-05T10:00:00")},
-    {name:"Program Komuniti 2026", date:new Date("2026-04-10T08:30:00")}
+    {name:"Mesyuarat Staf Bulanan", date:new Date("2026-03-25T09:00:00")},
+    {name:"Kempen Bandar Bersih", date:new Date("2026-03-25T09:00:00")},
+    {name:"Program Komuniti 2026", date:new Date("2026-03-25T08:30:00")}
 ];
 let eventIndex = 0;
 const countdownElem = document.getElementById("countdown");
@@ -219,12 +218,13 @@ setInterval(updateCountdown,1000);
 
 // Ticker info pantas
 const tickerData = [
-    "Info Staf: Latihan induksi selesai • ",
+    "Info Staf: SELAMAT HARI RAYA AIDILFITRI MAAF ZAHIR DAN BATIN • ",
     "Info Staf: Mesyuarat mingguan berjaya • ",
     "Info Staf: Kempen kebersihan berjalan lancar • ",
     "Info Staf: Operasi pembersihan illegal dumping selesai • ",
-    "Info Staf: ROMA SANGAT COMEL • ",
-    "Info Staf: Library Ditutup Selama-lamanya kerana isu 12 hari • "
+    "Info Staf: ROMA SANGAT COMEL & GEMOY • ",
+    "Info Staf: Library Ditutup Selama-lamanya kerana isu 12 hari • ",
+    "Info Staf: Sila pastikan Claim & TNT dihantar setiap sebelum 15 haribulan • "
 ];
 document.getElementById('tickerText').innerText = tickerData.join('');
 </script>
