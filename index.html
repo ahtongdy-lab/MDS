@@ -3,184 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Display Majlis Daerah Simunjan - TV Fullscreen</title>
+<title>Display Majlis Daerah Simunjan - Fullscreen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{overflow:hidden;color:white;}
+html, body{width:100%;height:100%;overflow:hidden;color:white;}
 .fullscreen{
     width:100vw;
     height:100vh;
-    position:relative;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     text-align:center;
     background-size:cover;
     background-position:center;
     transition:background 1s ease-in-out;
+    padding:10px 0;
 }
 
-/* Logo Majlis di tengah halaman */
+/* Logo Majlis */
 .logo{
-    width:200px;
-    margin-bottom:30px;
+    width:150px;
     animation:logoBounce 3s infinite alternate;
 }
 @keyframes logoBounce{
     0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+    50%{transform:translateY(-10px);}
     100%{transform:translateY(0);}
 }
 
 /* Jam Digital */
 .clock{
-    font-size:36px;
+    font-size:28px;
     font-weight:700;
-    text-shadow:3px 3px 6px #000;
-    margin-bottom:20px;
+    text-shadow:2px 2px 4px #000;
+    margin-bottom:10px;
 }
 
-/* Header Text */
-.fullscreen h1{font-size:70px;margin-bottom:12px;text-shadow:3px 3px 8px #000;}
-.fullscreen h2{font-size:48px;margin-bottom:30px;opacity:0.9;text-shadow:2px 2px 6px #000;}
+/* Header Ringkas */
+h2{font-size:32px;margin:5px;text-shadow:2px 2px 4px #000;}
+
+/* Slider & Announcement wrapper supaya muat dalam 1 skrin */
+.middle-content{
+    flex:1;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:flex-start;
+    width:95%;
+    margin-top:10px;
+    margin-bottom:10px;
+}
 
 /* Slider Box */
 .slider{
-    width:85%;
-    max-width:1200px;
+    width:45%;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
-    border-radius:25px;
-    padding:40px;
+    border-radius:15px;
+    padding:20px;
     text-align:center;
-    animation: fadeUp 1.5s ease;
 }
-.slider h3{font-size:36px;margin-bottom:12px;}
-.slider p{font-size:26px;}
+.slider h3{font-size:24px;margin-bottom:8px;}
+.slider p{font-size:18px;}
 
 /* Pengumuman Tahniah */
 .announcement{
-    width:80%;
-    max-width:1000px;
+    width:45%;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(8px);
-    border-radius:20px;
-    padding:25px 35px;
-    margin-top:30px;
+    border-radius:15px;
+    padding:15px 20px;
     text-align:left;
-    animation: fadeUp 1.5s ease;
 }
 .announcement h3{
-    font-size:32px;
-    margin-bottom:16px;
+    font-size:24px;
+    margin-bottom:10px;
     text-align:center;
 }
 .announcement ul{
     list-style-type:disc;
-    padding-left:30px;
+    padding-left:20px;
 }
 .announcement ul li{
-    font-size:26px;
-    margin-bottom:8px;
+    font-size:18px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
 }
 
-/* Countdown */
-.countdown{
-    margin-top:30px;
-    font-size:36px;
-    font-weight:700;
-    background: rgba(0,0,0,0.6);
-    padding:15px 25px;
-    border-radius:20px;
+/* Nama penerima blinking & kuning perlahan */
+.blinking{
+    color:yellow;
+    animation:blink 2s infinite;
+}
+@keyframes blink{
+    0%,50%,100%{opacity:1;}
+    25%,75%{opacity:0;}
 }
 
-/* Ticker info pantas BAWAH */
+/* Animasi icon kecil */
+.icon{
+    margin-right:8px;
+    animation:iconBounce 1.5s infinite alternate;
+    font-size:20px;
+}
+@keyframes iconBounce{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0);}
+}
+
+/* Ticker atas & bawah continuous single line */
 .ticker{
-    position:absolute;
-    bottom:0;
     width:100%;
     background:rgba(0,0,0,0.75);
-    padding:15px 0;
+    padding:8px 0;
     overflow:hidden;
-    white-space:nowrap;
     font-weight:700;
-    font-size:32px;
+    font-size:24px;
+    position:relative;
+    white-space:nowrap;
 }
 .ticker span{
     display:inline-block;
     padding-left:100%;
-    animation:tickerMove 80s linear infinite;
+    animation:scrollTicker linear infinite;
 }
-@keyframes tickerMove{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-}
+.ticker.top span{animation-duration:30s;}
+.ticker.bottom span{animation-duration:60s;}
 
-/* Ticker SELAMAT DATANG ATAS */
-.ticker.top{
-    top:0;
-    bottom:auto;
-    background:rgba(0,0,0,0.7);
-    color:yellow;
-    font-size:48px;
-    font-weight:700;
-}
-.ticker.top span{
-    display:inline-block;
-    padding-left:100%;
-    animation:tickerTopMove 50s linear infinite;
-}
-@keyframes tickerTopMove{
+@keyframes scrollTicker{
     0%{transform:translateX(100%);}
     100%{transform:translateX(-100%);}
 }
 
-/* Animasi */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-
-/* Responsive */
-@media screen and (max-width:1440px){
-    .fullscreen h1{font-size:60px;}
-    .fullscreen h2{font-size:40px;}
-    .slider h3{font-size:30px;}
-    .slider p{font-size:22px;}
-    .announcement h3{font-size:28px;}
-    .announcement ul li{font-size:22px;}
-    .clock{font-size:30px;}
-    .countdown{font-size:30px;}
-    .ticker.top{font-size:38px;}
-    .ticker{font-size:28px;}
-    .logo{width:180px;}
-}
-@media screen and (max-width:1024px){
-    .fullscreen h1{font-size:50px;}
-    .fullscreen h2{font-size:34px;}
-    .slider h3{font-size:26px;}
-    .slider p{font-size:20px;}
-    .announcement h3{font-size:24px;}
-    .announcement ul li{font-size:20px;}
-    .clock{font-size:26px;}
-    .countdown{font-size:26px;}
-    .ticker.top{font-size:32px;}
-    .ticker{font-size:24px;}
-    .logo{width:150px;}
-}
-@media screen and (max-width:768px){
-    .fullscreen h1{font-size:40px;}
-    .fullscreen h2{font-size:28px;}
-    .slider h3{font-size:22px;}
-    .slider p{font-size:18px;}
-    .announcement h3{font-size:20px;}
-    .announcement ul li{font-size:18px;}
-    .clock{font-size:22px;}
-    .countdown{font-size:22px;}
-    .ticker.top{font-size:26px;}
-    .ticker{font-size:20px;}
-    .logo{width:120px;}
+/* Responsive adjust */
+@media screen and (max-width:1200px){
+    .middle-content{flex-direction:column;align-items:center;}
+    .slider, .announcement{width:90%; margin-bottom:15px;}
 }
 </style>
 </head>
@@ -188,32 +152,31 @@ body{overflow:hidden;color:white;}
 
 <div class="fullscreen" id="fullscreen">
 
-    <!-- Ticker SELAMAT DATANG ATAS -->
-    <div class="ticker top"><span id="tickerTopText">Selamat Datang ke Pejabat Majlis Daerah Simunjan</span></div>
-
-    <!-- Jam digital -->
-    <div class="clock" id="clock"></div>
-
-    <!-- Logo Majlis di tengah -->
-    <img class="logo" src="logomds.png" alt="Logo Majlis">
-
-    <h1>MAJLIS DAERAH SIMUNJAN</h1>
-    <h2>Berita & Info Aktiviti Staf</h2>
-
-    <!-- Slider Berita & Aktiviti -->
-    <div class="slider" id="slider"></div>
-
-    <!-- Pengumuman Tahniah -->
-    <div class="announcement" id="announcement">
-        <h3>🎉 Tahniah Penerima Anugerah Perkhidmatan Cemerlang 2025 🎉</h3>
-        <ul id="awardList"></ul>
+    <!-- Ticker atas single -->
+    <div class="ticker top">
+        <span id="tickerTopText">Selamat Datang ke Pejabat Majlis Daerah Simunjan</span>
     </div>
 
-    <!-- Countdown -->
-    <div class="countdown" id="countdown"></div>
+    <!-- Jam digital & logo -->
+    <div>
+        <div class="clock" id="clock"></div>
+        <img class="logo" src="logomds.png" alt="Logo Majlis">
+        <h2>Berita & Info Aktiviti Staf</h2>
+    </div>
 
-    <!-- Ticker info pantas BAWAH -->
-    <div class="ticker"><span id="tickerText"></span></div>
+    <!-- Slider & Pengumuman -->
+    <div class="middle-content">
+        <div class="slider" id="slider"></div>
+        <div class="announcement" id="announcement">
+            <h3>🎉 Tahniah Penerima Anugerah Perkhidmatan Cemerlang 2025 🎉</h3>
+            <ul id="awardList"></ul>
+        </div>
+    </div>
+
+    <!-- Ticker bawah single -->
+    <div class="ticker bottom">
+        <span id="tickerText">Info Staf: SELAMAT HARI RAYA • Mesyuarat mingguan berjaya • Kempen kebersihan berjalan lancar • Operasi pembersihan illegal dumping selesai • ROMA SANGAT COMEL & GEMOY • Library Ditutup Selama-lamanya kerana isu 12 hari • Sila pastikan Claim & TNT dihantar setiap sebelum 15 haribulan •</span>
+    </div>
 </div>
 
 <script>
@@ -226,7 +189,7 @@ setInterval(()=>{
     fullscreen.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
 },8000);
 
-// Slider berita & aktiviti
+// Slider berita
 const displayData = [
     {tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis."},
     {tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis."},
@@ -249,7 +212,7 @@ setInterval(()=>{
     showSlide(current);
 },5000);
 
-// Jam Digital realtime
+// Jam digital realtime
 function updateClock(){
     const now = new Date();
     const h = now.getHours().toString().padStart(2,'0');
@@ -260,61 +223,18 @@ function updateClock(){
 updateClock();
 setInterval(updateClock,1000);
 
-// Countdown automatik ke acara seterusnya
-const events = [
-    {name:"Mesyuarat Staf Bulanan", date:new Date("2026-03-25T09:00:00")},
-    {name:"Kempen Bandar Bersih", date:new Date("2026-03-25T09:00:00")},
-    {name:"Program Komuniti 2026", date:new Date("2026-03-25T08:30:00")},
-    {name:"TAHUN BARU 2027", date:new Date("2026-12-31T24:00:00")}
-];
-const countdownElem = document.getElementById("countdown");
-function getNextEvent(){
-    const now = new Date();
-    const upcoming = events.filter(e => e.date - now > 0);
-    if(upcoming.length === 0) return null;
-    upcoming.sort((a,b)=>a.date - b.date);
-    return upcoming[0];
-}
-function updateCountdown(){
-    const event = getNextEvent();
-    if(!event) {
-        countdownElem.innerText = "Tiada acara seterusnya.";
-        return;
-    }
-    const diff = event.date - new Date();
-    const days = Math.floor(diff/(1000*60*60*24));
-    const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((diff%(1000*60*60))/(1000*60));
-    const seconds = Math.floor((diff%(1000*60))/1000);
-    countdownElem.innerText = `📅 ${event.name} dalam: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-}
-updateCountdown();
-setInterval(updateCountdown,1000);
-
-// Ticker info pantas BAWAH
-const tickerData = [
-    "Info Staf: SELAMAT HARI RAYA AIDILFITRI MAAF ZAHIR DAN BATIN • ",
-    "Info Staf: Mesyuarat mingguan berjaya • ",
-    "Info Staf: Kempen kebersihan berjalan lancar • ",
-    "Info Staf: Operasi pembersihan illegal dumping selesai • ",
-    "Info Staf: ROMA SANGAT COMEL & GEMOY • ",
-    "Info Staf: Library Ditutup Selama-lamanya kerana isu 12 hari • ",
-    "Info Staf: Sila pastikan Claim & TNT dihantar setiap sebelum 15 haribulan • "
-];
-document.getElementById('tickerText').innerText = tickerData.join(' ') + tickerData.join(' ');
-
-// Senarai penerima Anugerah Perkhidmatan Cemerlang 2025
+// Senarai penerima Anugerah dengan blinking & ikon
 const awardRecipients = [
-    "Encik Ali Bin Abu",
     "Puan Khatijah Ibrahim",
-    "Encik Cobaan",
-    "Puan Maria Binti Tan",
-    "Encik Faizal Bin Hassan"
+    "Puan Debbie Anak Polis",
+    "Encik Roma Anak Bulan 8",
+    "Cik Sofia Jikan Bin Siktauk ",
+    "Encik In The Beninging"
 ];
 const awardListElem = document.getElementById('awardList');
 awardRecipients.forEach(name=>{
     const li = document.createElement('li');
-    li.innerText = name;
+    li.innerHTML = `<span class="icon">🎖️</span><span class="blinking">${name}</span>`;
     awardListElem.appendChild(li);
 });
 </script>
