@@ -70,6 +70,9 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
     margin-bottom:8px;
     text-decoration:underline;
 }
+<video autoplay muted loop>
+  <source src="EarthHourVideo.mp4" type="video/mp4">
+</video>
 .slider p, .meeting-slider ul li, .info-slider ul li, .program-slider ul li, .media-slider ul li, .announcement ul li{font-size:18px;margin-bottom:6px;}
 
 /* Nama penerima gold + blinking */
@@ -212,12 +215,12 @@ showInfoSlide(infoIndex);
 setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex);},5000);
 
 // Media Aktiviti
-const mediaList = [
-  `<h3>Earth Day Video</h3>
-   <video width="400" controls>
-     <source src="EarthHourVideo.mp4" type="video/mp4">
-   </video>`
-];
+const mediaListElem = document.getElementById('mediaList');
+mediaList.forEach(item => {
+  const li = document.createElement('li');
+  li.innerHTML = item;
+  mediaListElem.appendChild(li);
+});
 </script>
 </body>
 </html>
