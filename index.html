@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Display Majlis Daerah Simunjan - Fullscreen</title>
+<title>Majlis Daerah Simunjan - TV Fullscreen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -26,7 +26,7 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
 
 /* Logo Majlis */
 .logo{
-    width:120px;
+    width:150px;
     animation:logoBounce 3s infinite alternate;
 }
 @keyframes logoBounce{
@@ -35,18 +35,15 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
     100%{transform:translateY(0);}
 }
 
-/* Jam Digital */
+/* Jam Digital AM/PM */
 .clock{
-    font-size:24px;
+    font-size:36px;
     font-weight:700;
     text-shadow:2px 2px 4px #000;
     margin-bottom:5px;
 }
 
-/* Header Ringkas */
-h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
-
-/* Middle wrapper untuk slider & pengumuman */
+/* Middle wrapper horizontal TV */
 .middle-content{
     flex:1;
     display:flex;
@@ -58,56 +55,30 @@ h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
     margin-bottom:5px;
 }
 
-/* Semua slider box */
-.slider, .meeting-slider, .info-slider, .program-slider{
-    width:20%;
-    background: rgba(0,0,0,0.6);
+/* Semua slider */
+.slider, .meeting-slider, .info-slider, .program-slider, .media-slider, .announcement{
+    width:16%;
+    background: rgba(0,0,0,0.65);
     backdrop-filter: blur(10px);
     border-radius:12px;
     padding:10px;
     text-align:center;
-    margin:0 3px;
+    margin:0 2px;
 }
-.slider h3, .meeting-slider h3, .info-slider h3, .program-slider h3{
+.slider h3, .meeting-slider h3, .info-slider h3, .program-slider h3, .media-slider h3, .announcement h3{
     font-size:20px;
     margin-bottom:8px;
     text-decoration:underline;
 }
-.slider p, .meeting-slider ul li, .info-slider ul li, .program-slider ul li{font-size:16px;margin-bottom:4px;}
+.slider p, .meeting-slider ul li, .info-slider ul li, .program-slider ul li, .media-slider ul li, .announcement ul li{font-size:18px;margin-bottom:6px;}
 
-/* Pengumuman Tahniah */
-.announcement{
-    width:20%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
-    border-radius:12px;
-    padding:10px;
-    text-align:left;
-}
-.announcement h3{
-    font-size:20px;
-    margin-bottom:8px;
-    text-align:center;
-}
-.announcement ul{
-    list-style-type:disc;
-    padding-left:15px;
-}
-.announcement ul li{
-    display:flex;
-    align-items:center;
-}
-
-/* Nama penerima gold + blinking (tanpa glow) */
+/* Nama penerima gold + blinking */
 .glow-blink{
     color:gold;
     font-weight:700;
     animation:blink 2s infinite;
 }
-@keyframes blink{
-    0%,50%,100%{opacity:1;}
-    25%,75%{opacity:0;}
-}
+@keyframes blink{0%,50%,100%{opacity:1;}25%,75%{opacity:0;}}
 
 /* Tarikh mesyuarat blinking hijau */
 .blinking-green{
@@ -116,11 +87,11 @@ h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
     animation:blink 1.5s infinite;
 }
 
-/* Animasi icon kecil */
+/* Icon animasi */
 .icon{
     margin-right:5px;
     animation:iconBounce 1.5s infinite alternate;
-    font-size:16px;
+    font-size:20px;
 }
 @keyframes iconBounce{
     0%{transform:translateY(0);}
@@ -128,52 +99,31 @@ h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
     100%{transform:translateY(0);}
 }
 
-/* Ticker atas & bawah continuous tanpa gap */
+/* Ticker continuous */
 .ticker{
     width:100%;
     background:rgba(0,0,0,0.75);
     padding:5px 0;
     overflow:hidden;
     font-weight:700;
-    font-size:20px;
+    font-size:24px;
     position:relative;
     white-space:nowrap;
     text-align:left;
     box-sizing:border-box;
 }
-.ticker-content{
-    display:inline-block;
-    padding-left:0;
-    white-space:nowrap;
-}
-.ticker-content span{
-    margin-right:50px; /* spacing between repeated text */
-}
+.ticker-content{display:inline-block;white-space:nowrap;}
+.ticker-content span{margin-right:50px;}
 
-/* Top ticker animation - LEBIH LAJU */
-.ticker.top .ticker-content{
-    display:inline-block;
-    animation:scrollTop 15s linear infinite;
-}
-@keyframes scrollTop{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-}
+/* Top ticker faster */
+.ticker.top .ticker-content{animation:scrollTop 15s linear infinite;}
+@keyframes scrollTop{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.ticker.bottom .ticker-content{animation:scrollBottom 60s linear infinite;}
+@keyframes scrollBottom{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-/* Bottom ticker animation tetap 60s */
-.ticker.bottom .ticker-content{
-    display:inline-block;
-    animation:scrollBottom 60s linear infinite;
-}
-@keyframes scrollBottom{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-}
-
-/* Responsive adjust */
-@media screen and (max-width:1400px){
-    .middle-content{flex-direction:column;align-items:center;}
-    .slider, .meeting-slider, .info-slider, .program-slider, .announcement{width:90%; margin-bottom:10px;}
+@media screen and (max-width:1920px){
+    .slider, .meeting-slider, .info-slider, .program-slider, .media-slider, .announcement{width:18%;}
+    .clock{font-size:28px;}
 }
 </style>
 </head>
@@ -184,7 +134,7 @@ h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
     <!-- Ticker atas -->
     <div class="ticker top">
         <div class="ticker-content" id="tickerTopText">
-            Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan •
+            Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan •
         </div>
     </div>
 
@@ -195,138 +145,79 @@ h2{font-size:28px;margin:5px;text-shadow:2px 2px 4px #000;}
         <h2>Berita & Info Aktiviti Staf</h2>
     </div>
 
-    <!-- Semua slider -->
+    <!-- Semua slider horizontal -->
     <div class="middle-content">
         <div class="slider" id="slider"></div>
-
-        <div class="meeting-slider" id="meetingSlider">
-            <h3>📅 Senarai Mesyuarat Jawatankuasa MDS & Bahagian</h3>
-            <ul id="meetingList"></ul>
-        </div>
-
-        <div class="program-slider" id="programSlider">
-            <h3>🏘️ Senarai Program Komuniti 2026</h3>
-            <ul id="programList"></ul>
-        </div>
-
-        <div class="info-slider" id="infoSlider">
-            <h3>⚠️ Info Penting</h3>
-            <ul id="infoList"></ul>
-        </div>
-
-        <div class="announcement" id="announcement">
-            <h3>🎉 Tahniah Penerima Anugerah Perkhidmatan Cemerlang 2025 🎉</h3>
-            <ul id="awardList"></ul>
-        </div>
+        <div class="meeting-slider" id="meetingSlider"><h3>📅 Senarai Mesyuarat Jawatankuasa MDS</h3><ul id="meetingList"></ul></div>
+        <div class="program-slider" id="programSlider"><h3>🏘️ Senarai Program Komuniti 2026</h3><ul id="programList"></ul></div>
+        <div class="info-slider" id="infoSlider"><h3>⚠️ Info Penting</h3><ul id="infoList"></ul></div>
+        <div class="media-slider" id="mediaSlider"><h3>🎥📸 Info Video/Gambar Aktiviti</h3><ul id="mediaList"></ul></div>
+        <div class="announcement" id="announcement"><h3>🎉 Tahniah Penerima Anugerah Perkhidmatan Cemerlang 2025 🎉</h3><ul id="awardList"></ul></div>
     </div>
 
     <!-- Ticker bawah -->
     <div class="ticker bottom">
         <div class="ticker-content" id="tickerText">
-            Info Staf: SELAMAT HARI RAYA • Mesyuarat mingguan berjaya • Kempen kebersihan berjalan lancar • Operasi pembersihan illegal dumping selesai • ROMA SANGAT COMEL & GEMOY • Library Ditutup Selama-lamanya • Info Staf: SELAMAT HARI RAYA • Mesyuarat mingguan berjaya •
+            Info Staf: SELAMAT HARI RAYA • Mesyuarat mingguan berjaya • Kempen kebersihan berjalan lancar • Operasi pembersihan illegal dumping selesai • ROMA SANGAT COMEL & GEMOY • Library Ditutup Selama-lamanya •
         </div>
     </div>
 </div>
 
 <script>
 // Background slideshow
-const backgrounds = ['gambar2.jpeg'];
-let bgIndex = 0;
-const fullscreen = document.getElementById('fullscreen');
-setInterval(()=>{
-    bgIndex = (bgIndex +1) % backgrounds.length;
-    fullscreen.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
-},8000);
+const backgrounds = ['gambar1.jpeg','gambar2.jpeg','gambar3.jpeg'];
+let bgIndex=0;
+const fullscreen=document.getElementById('fullscreen');
+setInterval(()=>{bgIndex=(bgIndex+1)%backgrounds.length;fullscreen.style.backgroundImage=`url('${backgrounds[bgIndex]}')`;},8000);
 
 // Slider berita
-const displayData = [
-    {tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis. Penduduk telah diberikan makan minum sehingga kenyang sampai tak mampu nak buat kerja lalu nak tidur jer"},
-    {tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan pihak Veterinar Sarawak. Sebanyak 1 juta ekor anjir berjaya dimatikan"},
-    {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},
-    {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS. Kerjasama yang erat di antara kakitangan MDS mengukuhkan lagi ikat silaturahim"}
-];
-let current = 0;
-const slider = document.getElementById("slider");
-function showSlide(i){
-    const data = displayData[i];
-    slider.innerHTML = `<h3>${data.tajuk}</h3><p>${data.isi}</p>`;
-}
+const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis."},{tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis."},{tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},{tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
+let current=0;
+const slider=document.getElementById("slider");
+function showSlide(i){const data=displayData[i];slider.innerHTML=`<h3>${data.tajuk}</h3><p>${data.isi}</p>`;}
 showSlide(current);
 setInterval(()=>{current=(current+1)%displayData.length;showSlide(current);},5000);
 
-// Jam digital realtime
+// Jam digital AM/PM
 function updateClock(){
-    const now = new Date();
-    const h = now.getHours().toString().padStart(2,'0');
-    const m = now.getMinutes().toString().padStart(2,'0');
-    const s = now.getSeconds().toString().padStart(2,'0');
-    document.getElementById('clock').innerText = `${h}:${m}:${s}`;
+    const now=new Date();
+    let h=now.getHours();const m=now.getMinutes().toString().padStart(2,'0');const s=now.getSeconds().toString().padStart(2,'0');
+    const ampm=h>=12?'PM':'AM';h=h%12||12;
+    document.getElementById('clock').innerText=`${h.toString().padStart(2,'0')}:${m}:${s} ${ampm}`;
 }
-updateClock();
-setInterval(updateClock,1000);
+updateClock();setInterval(updateClock,1000);
 
-// Senarai penerima Anugerah gold + blinking & ikon
-const awardRecipients = ["Encik Rizal Marjunid","Puan Khatijah Ibrahim","Encik Khabiruzir Bin Ibrahim Tumpu","Puan Debbie Choo Momok","Encik Marlon Dass Tembakan Ke Udara", "Encik Roma Bulan 8"];
-const awardListElem = document.getElementById('awardList');
-awardRecipients.forEach(name=>{
-    const li = document.createElement('li');
-    li.innerHTML = `<span class="icon">🎖️</span><span class="glow-blink">${name}</span>`;
-    awardListElem.appendChild(li);
-});
+// Penerima Anugerah
+const awardRecipients=["Encik Ali Bin Abu","Puan Khatijah Ibrahim","Encik Cobaan","Puan Maria Binti Tan","Encik Faizal Bin Hassan"];
+const awardListElem=document.getElementById('awardList');
+awardRecipients.forEach(name=>{const li=document.createElement('li');li.innerHTML=`<span class="icon">🎖️</span><span class="glow-blink">${name}</span>`;awardListElem.appendChild(li);});
 
-// Senarai Mesyuarat Jawatankuasa MDS dengan tarikh blinking hijau jika hari ini
-const meetingList = [
-    {tarikh:"2026-03-24",nama:"Mesyuarat Bahagian PH"},
-    {tarikh:"2026-03-25",nama:"Mesyuarat Operasi"},
-    {tarikh:"2026-03-26",nama:"Mesyuarat Perancangan Bandar"},
-    {tarikh:"2026-03-27",nama:"Mesyuarat Kebersihan"},
-    {tarikh:"2026-03-28",nama:"Mesyuarat Sumber Manusia"}
-];
-const meetingListElem = document.getElementById('meetingList');
-const today = new Date().toISOString().split('T')[0];
-meetingList.forEach(m=>{
-    const li = document.createElement('li');
-    if(m.tarikh===today){
-        li.innerHTML = `<span class="icon">📌</span> <span class="blinking-green">${m.tarikh} - ${m.nama}</span>`;
-    } else {
-        li.innerHTML = `<span class="icon">📌</span> <span style="color:yellow;">${m.tarikh} - ${m.nama}</span>`;
-    }
-    meetingListElem.appendChild(li);
-});
+// Mesyuarat
+const meetingList=[{tarikh:"2026-03-24",nama:"Mesyuarat Kewangan"},{tarikh:"2026-03-25",nama:"Mesyuarat Operasi"},{tarikh:"2026-03-26",nama:"Mesyuarat Perancangan Bandar"},{tarikh:"2026-03-27",nama:"Mesyuarat Kebersihan"},{tarikh:"2026-03-28",nama:"Mesyuarat Sumber Manusia"}];
+const meetingListElem=document.getElementById('meetingList');
+const today=new Date().toISOString().split('T')[0];
+meetingList.forEach(m=>{const li=document.createElement('li');if(m.tarikh===today){li.innerHTML=`<span class="icon">📌</span> <span class="blinking-green">${m.tarikh} - ${m.nama}</span>`;}else{li.innerHTML=`<span class="icon">📌</span> <span style="color:yellow;">${m.tarikh} - ${m.nama}</span>`;}meetingListElem.appendChild(li);});
 
-// Program Komuniti slider
-const programList = [
-    {tarikh:"2026-03-24",nama:"Operasi Anjing Liar Kawasan Simunjan"},
-    {tarikh:"2026-03-25",nama:"Earth Hour Day"},
-    {tarikh:"2026-03-26",nama:"Sukan Tarik Tali"},
-    {tarikh:"2026-03-27",nama:"Kempen Kesedaran Alam Sekitar"},
-    {tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}
-];
-const programListElem = document.getElementById('programList');
-programList.forEach(p=>{
-    const li = document.createElement('li');
-    if(p.tarikh===today){
-        li.innerHTML = `🏆 <span class="blinking-green">${p.tarikh} - ${p.nama}</span>`;
-    } else {
-        li.innerHTML = `🏆 <span style="color:yellow;">${p.tarikh} - ${p.nama}</span>`;
-    }
-    programListElem.appendChild(li);
-});
+// Program Komuniti
+const programList=[{tarikh:"2026-03-24",nama:"Gotong-Royong Kampung"},{tarikh:"2026-03-25",nama:"Karnival Sukan Staf"},{tarikh:"2026-03-26",nama:"Lawatan Komuniti ke Sekolah"},{tarikh:"2026-03-27",nama:"Kempen Kesedaran Alam Sekitar"},{tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}];
+const programListElem=document.getElementById('programList');
+programList.forEach(p=>{const li=document.createElement('li');if(p.tarikh===today){li.innerHTML=`🏆 <span class="blinking-green">${p.tarikh} - ${p.nama}</span>`;}else{li.innerHTML=`🏆 <span style="color:yellow;">${p.tarikh} - ${p.nama}</span>`;}programListElem.appendChild(li);});
 
-// Info Penting slider (selepas Program Komuniti)
-const infoList = [
-    "Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.",
-    "Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.",
-    "Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.",
-    "Pengurusan sampah akan dijalankan setiap pagi Isnin.",
-    "Perpustakaan Awam MDS ditutup sementara disebabkan ada gangguan 12 hari."
-];
-const infoListElem = document.getElementById('infoList');
-let infoIndex = 0;
-function showInfoSlide(i){infoListElem.innerHTML = `<li>${infoList[i]}</li>`;}
+// Info Penting
+const infoList=["Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.","Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.","Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.","Pengurusan sampah akan dijalankan setiap pagi Isnin."];
+const infoListElem=document.getElementById('infoList');
+let infoIndex=0;
+function showInfoSlide(i){infoListElem.innerHTML=`<li>${infoList[i]}</li>`;}
 showInfoSlide(infoIndex);
 setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex);},5000);
 
+// Media Aktiviti
+const mediaList=["EarthHourVideo","Gambar Karnival Sukan Staf 25 Mac 2026","Video Lawatan Komuniti ke Sekolah 26 Mac 2026","Gambar Kempen Kesedaran Alam Sekitar 27 Mac 2026"];
+const mediaListElem=document.getElementById('mediaList');
+let mediaIndex=0;
+function showMediaSlide(i){mediaListElem.innerHTML=`<li>🎬 ${mediaList[i]}</li>`;}
+showMediaSlide(mediaIndex);
+setInterval(()=>{mediaIndex=(mediaIndex+1)%mediaList.length;showMediaSlide(mediaIndex);},5000);
 </script>
 </body>
 </html>
