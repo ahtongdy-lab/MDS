@@ -213,8 +213,9 @@ programList.forEach(p=>{const li=document.createElement('li');if(p.tarikh===toda
 const infoList=["Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.","Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.","Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.","Perpustakan Awam MDS ditutup akibat dari bencana 12 Hari."];
 const infoListElem=document.getElementById('infoList');
 let infoIndex=0;
-function showInfoSlide(i){infoListElem.innerHTML=`<li>${infoList[i]}</li>`;}
-showInfoSlide(infoIndex);
+function showInfoSlide(i){
+    infoListElem.innerHTML = `<li class="important-blink">${infoList[i]}</li>`;
+}
 setInterval(()=>{infoIndex=(infoIndex+1)%infoList.length;showInfoSlide(infoIndex);},5000);
 
 /// Media Aktiviti (VIDEO + GAMBAR)
