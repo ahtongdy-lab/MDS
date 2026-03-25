@@ -177,7 +177,11 @@ const fullscreen=document.getElementById('fullscreen');
 setInterval(()=>{bgIndex=(bgIndex+1)%backgrounds.length;fullscreen.style.backgroundImage=`url('${backgrounds[bgIndex]}')`;},8000);
 
 // Slider berita
-const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis yang berlansung di Taman Botani. Ini sekaligus telah meningkatkan lagi mutu kerjasama antara penduduk kampung dan staf Majlis."},{tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan Veterinar. 1 juta ekor anjir berjaya ditembak dan dihancurkan dengan mesin pengisar daging."},{tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},{tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
+const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis yang berlansung di Taman Botani. Ini sekaligus telah meningkatkan lagi mutu kerjasama antara penduduk kampung dan staf Majlis."},
+                   {tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan Veterinar. 1 juta ekor anjir berjaya ditembak dan dihancurkan dengan mesin pengisar daging."},
+                   {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},
+                   {tajuk:"Baja Kompos Brand NUEL",isi:"Sila rujuk kepada Encik Nuel Bin Ajang untuk pembelian baja Kompos. Baja Kompos/RM4 Sebungkus."},
+                   {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
 let current=0;
 const slider=document.getElementById("slider");
 function showSlide(i){const data=displayData[i];slider.innerHTML=`<h3>${data.tajuk}</h3><p>${data.isi}</p>`;}
@@ -204,7 +208,11 @@ const awardListElem=document.getElementById('awardList');
 awardRecipients.forEach(name=>{const li=document.createElement('li');li.innerHTML=`<span class="icon">🎖️</span><span class="glow-blink">${name}</span>`;awardListElem.appendChild(li);});
 
 // Mesyuarat
-const meetingList=[{tarikh:"2026-03-24",nama:"Mesyuarat Kewangan"},{tarikh:"2026-03-25",nama:"Mesyuarat Operasi"},{tarikh:"2026-03-26",nama:"Mesyuarat Perancangan Bandar"},{tarikh:"2026-03-27",nama:"Mesyuarat Kebersihan"},{tarikh:"2026-03-28",nama:"Mesyuarat Sumber Manusia"}];
+const meetingList=[{tarikh:"2026-03-25",nama:"Mesyuarat Bahagian Public Health - 12.00 AM"},
+                   {tarikh:"2026-03-25",nama:"Mesyuarat Bahagian Khidmat Pengurusan - 11.00PM"},
+                   {tarikh:"2026-03-26",nama:"Mesyuarat Perancangan Bandar"},
+                   {tarikh:"2026-03-27",nama:"Mesyuarat Kebersihan"},
+                   {tarikh:"2026-03-28",nama:"Mesyuarat Sumber Manusia"}];
 const meetingListElem=document.getElementById('meetingList');
 const today=new Date().toISOString().split('T')[0];
 meetingList.forEach(m=>{const li=document.createElement('li');if(m.tarikh===today){li.innerHTML=`<span class="icon">📌</span> <span class="blinking-green">${m.tarikh} - ${m.nama}</span>`;}else{li.innerHTML=`<span class="icon">📌</span> <span style="color:yellow;">${m.tarikh} - ${m.nama}</span>`;}meetingListElem.appendChild(li);});
@@ -215,7 +223,11 @@ const programListElem=document.getElementById('programList');
 programList.forEach(p=>{const li=document.createElement('li');if(p.tarikh===today){li.innerHTML=`🏆 <span class="blinking-green">${p.tarikh} - ${p.nama}</span>`;}else{li.innerHTML=`🏆 <span style="color:yellow;">${p.tarikh} - ${p.nama}</span>`;}programListElem.appendChild(li);});
 
 // Info Penting
-const infoList=["Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.","Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.","Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.","Perpustakan Awam MDS ditutup akibat dari bencana 12 Hari."];
+const infoList=["Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.",
+                "Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.",
+                "Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.",
+                "Semua staf diwajibkan membeli Baja Kompos Jenama NUELAJANG, harga RM 1,000.00/Sebungkus",
+                "Perpustakan Awam MDS ditutup akibat dari bencana 12 Hari."];
 const infoListElem=document.getElementById('infoList');
 let infoIndex=0;
 function showInfoSlide(i){
