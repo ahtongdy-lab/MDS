@@ -179,9 +179,9 @@ setInterval(()=>{bgIndex=(bgIndex+1)%backgrounds.length;fullscreen.style.backgro
 // Slider berita
 const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis yang berlansung di Taman Botani. Ini sekaligus telah meningkatkan lagi mutu kerjasama antara penduduk kampung dan staf Majlis."},
                    {tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan Veterinar. 1 juta ekor anjir berjaya ditembak dan dihancurkan dengan mesin pengisar daging."},
-                   {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},
+                   {tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan dan kelancaran perkhidmatan kepada orang awam."},
                    {tajuk:"Baja Kompos Brand NUEL",isi:"Sila rujuk kepada Encik Nuel Bin Ajang untuk pembelian baja Kompos. Baja Kompos/RM4 Sebungkus."},
-                   {tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
+                   {tajuk:"Cukai Tafsiran 2026",isi:"Sila bayar cukai tafsiran anda dengan segera."}];
 let current=0;
 const slider=document.getElementById("slider");
 function showSlide(i){const data=displayData[i];slider.innerHTML=`<h3>${data.tajuk}</h3><p>${data.isi}</p>`;}
@@ -200,7 +200,6 @@ updateClock();setInterval(updateClock,1000);
 // Penerima Anugerah
 const awardRecipients=["Puan Debbie Anak Abraham Linconln",
                        "Encik Muadzam Bin Razali",
-                       "Encik Marlon Dass Anak Noel",
                        "Cik Juliana Binti Mahdi (Staf Gedong)",
                        "Cik Patricia Anak Andrew",
                        "Tuan Ining Anak Dakek"];
@@ -210,23 +209,21 @@ awardRecipients.forEach(name=>{const li=document.createElement('li');li.innerHTM
 // Mesyuarat
 const meetingList=[{tarikh:"2026-03-25",nama:"Mesyuarat Bahagian Public Health - 12.00 AM"},
                    {tarikh:"2026-03-25",nama:"Mesyuarat Bahagian Khidmat Pengurusan - 11.00PM"},
-                   {tarikh:"2026-03-26",nama:"Mesyuarat Perancangan Bandar"},
-                   {tarikh:"2026-03-27",nama:"Mesyuarat Kebersihan"},
                    {tarikh:"2026-03-28",nama:"Mesyuarat Sumber Manusia"}];
 const meetingListElem=document.getElementById('meetingList');
 const today=new Date().toISOString().split('T')[0];
 meetingList.forEach(m=>{const li=document.createElement('li');if(m.tarikh===today){li.innerHTML=`<span class="icon">📌</span> <span class="blinking-green">${m.tarikh} - ${m.nama}</span>`;}else{li.innerHTML=`<span class="icon">📌</span> <span style="color:yellow;">${m.tarikh} - ${m.nama}</span>`;}meetingListElem.appendChild(li);});
 
 // Program Komuniti
-const programList=[{tarikh:"2026-03-28",nama:"Program Earth Hour"},{tarikh:"2026-03-29",nama:"Karnival Sukan Staf MDS"},{tarikh:"2026-03-30",nama:"Ngabang berjemaat ke Rumah Cik Juliana di Gedong"},{tarikh:"2026-03-27",nama:"Kempen Kesedaran Alam Sekitar"},{tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}];
+const programList=[{tarikh:"2026-03-28",nama:"Program Earth Hour"},
+                   {tarikh:"2026-03-30",nama:"Program Kitar Semula 3S"},
+                   {tarikh:"2026-03-30",nama:"Ngabang berjemaat ke Rumah Cik Juliana di Gedong"},
+                   {tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}];
 const programListElem=document.getElementById('programList');
 programList.forEach(p=>{const li=document.createElement('li');if(p.tarikh===today){li.innerHTML=`🏆 <span class="blinking-green">${p.tarikh} - ${p.nama}</span>`;}else{li.innerHTML=`🏆 <span style="color:yellow;">${p.tarikh} - ${p.nama}</span>`;}programListElem.appendChild(li);});
 
 // Info Penting
-const infoList=["Sila pastikan laporan bulanan dihantar sebelum 28 Mac 2026.",
-                "Pejabat ditutup sementara pada 31 Mac 2026 untuk penyelenggaraan.",
-                "Semua staf diwajibkan hadir latihan keselamatan pada 29 Mac 2026.",
-                "Semua staf diwajibkan membeli Baja Kompos Jenama NUELAJANG, harga RM 1,000.00/Sebungkus",
+const infoList=["Semua staf diwajibkan membeli Baja Kompos Jenama NUELAJANG.",
                 "Perpustakan Awam MDS ditutup akibat dari bencana 12 Hari."];
 const infoListElem=document.getElementById('infoList');
 let infoIndex=0;
