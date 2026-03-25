@@ -140,7 +140,7 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
     <!-- Ticker atas -->
     <div class="ticker top">
         <div class="ticker-content" id="tickerTopText">
-            Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan •
+            Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan • Selamat Datang ke Pejabat Majlis Daerah Simunjan •
         </div>
     </div>
 
@@ -164,20 +164,20 @@ html, body{width:100%;height:100%;overflow:hidden;color:white;}
     <!-- Ticker bawah -->
     <div class="ticker bottom">
         <div class="ticker-content" id="tickerText">
-            Info Staf: SELAMAT HARI RAYA AIDILFITRI - MAAF ZAHIR DAN BATIN • Mesyuarat mingguan berjaya • Kempen kebersihan berjalan lancar • Operasi pembersihan illegal dumping selesai • ROMA SANGAT COMEL & GEMOY • Library Ditutup Selama-lamanya •
+            Info Staf: SELAMAT HARI RAYA AIDILFITRI - MAAF ZAHIR DAN BATIN • ROMA SANGAT COMEL & GEMOY • Library Ditutup Selama-lamanya, Wabak 12 Hari Melanda •
         </div>
     </div>
 </div>
 
 <script>
 // Background slideshow
-const backgrounds = ['gambar2.jpeg'];
+const backgrounds = ['b1.jpeg'];
 let bgIndex=0;
 const fullscreen=document.getElementById('fullscreen');
 setInterval(()=>{bgIndex=(bgIndex+1)%backgrounds.length;fullscreen.style.backgroundImage=`url('${backgrounds[bgIndex]}')`;},8000);
 
 // Slider berita
-const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis."},{tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan Veterinar. 1 juta ekor anjir berjaya ditembak dan dihancurkan dengan mesin pengisar daging."},{tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},{tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
+const displayData=[{tajuk:"Program Komuniti 2026",isi:"Aktiviti bersama penduduk berjaya dijalankan oleh staf Majlis yang berlansung di Taman Botani. Ini sekaligus telah meningkatkan lagi mutu kerjasama antara penduduk kampung dan staf Majlis."},{tajuk:"Operasi Anjir di Kawasan Simunjan",isi:"Kerja-kerja penghapusan segala anjir di kawasan Simunjan dilakukan oleh pasukan Majlis dan Veterinar. 1 juta ekor anjir berjaya ditembak dan dihancurkan dengan mesin pengisar daging."},{tajuk:"Mesyuarat Staf Bulanan",isi:"Mesyuarat diadakan bagi memastikan kelancaran operasi jabatan."},{tajuk:"Kempen Bandar Bersih",isi:"Staf Majlis telah mengadakan kempen kebersihan di kawasan utama Pejabat MDS."}];
 let current=0;
 const slider=document.getElementById("slider");
 function showSlide(i){const data=displayData[i];slider.innerHTML=`<h3>${data.tajuk}</h3><p>${data.isi}</p>`;}
@@ -194,7 +194,12 @@ function updateClock(){
 updateClock();setInterval(updateClock,1000);
 
 // Penerima Anugerah
-const awardRecipients=["Y.A.B Dato' Seri Anwar Ibrahim","Encik Roma Bulan 8","The Honorable Mr.Donald Trump","Puan Winnie Albert","Puan Khatijah Ibrahim"];
+const awardRecipients=["Puan Debbie Anak Abraham Linconln",
+                       "Encik Muadzam Bin Razali",
+                       "Encik Marlon Dass Anak Noel",
+                       "Cik Juliana Binti Mahdi (Staf Gedong)",
+                       "Cik Patricia Anak Andrew",
+                       "Tuan Ining Anak Dakek"];
 const awardListElem=document.getElementById('awardList');
 awardRecipients.forEach(name=>{const li=document.createElement('li');li.innerHTML=`<span class="icon">🎖️</span><span class="glow-blink">${name}</span>`;awardListElem.appendChild(li);});
 
@@ -205,7 +210,7 @@ const today=new Date().toISOString().split('T')[0];
 meetingList.forEach(m=>{const li=document.createElement('li');if(m.tarikh===today){li.innerHTML=`<span class="icon">📌</span> <span class="blinking-green">${m.tarikh} - ${m.nama}</span>`;}else{li.innerHTML=`<span class="icon">📌</span> <span style="color:yellow;">${m.tarikh} - ${m.nama}</span>`;}meetingListElem.appendChild(li);});
 
 // Program Komuniti
-const programList=[{tarikh:"2026-03-24",nama:"Gotong-Royong Kampung"},{tarikh:"2026-03-25",nama:"Karnival Sukan Staf"},{tarikh:"2026-03-26",nama:"Lawatan Komuniti ke Sekolah"},{tarikh:"2026-03-27",nama:"Kempen Kesedaran Alam Sekitar"},{tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}];
+const programList=[{tarikh:"2026-03-28",nama:"Program Earth Hour"},{tarikh:"2026-03-29",nama:"Karnival Sukan Staf MDS"},{tarikh:"2026-03-30",nama:"Ngabang berjemaat ke Rumah Cik Juliana di Gedong"},{tarikh:"2026-03-27",nama:"Kempen Kesedaran Alam Sekitar"},{tarikh:"2026-03-28",nama:"Pertandingan Masakan Tradisional"}];
 const programListElem=document.getElementById('programList');
 programList.forEach(p=>{const li=document.createElement('li');if(p.tarikh===today){li.innerHTML=`🏆 <span class="blinking-green">${p.tarikh} - ${p.nama}</span>`;}else{li.innerHTML=`🏆 <span style="color:yellow;">${p.tarikh} - ${p.nama}</span>`;}programListElem.appendChild(li);});
 
